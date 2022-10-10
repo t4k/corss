@@ -1,6 +1,7 @@
 name: Download RSS
 on:
   schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 jobs:
   download-rss:
