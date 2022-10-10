@@ -1,0 +1,43 @@
+name: Download RSS
+on:
+  schedule:
+  workflow_dispatch:
+jobs:
+  download-rss:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # in order to determine changed files
+
+      - name: 🐞 curl --version
+        run: curl --version
+
+      - name: cURL
+        run: curl https://libcal.caltech.edu/rss.php?cid=5754&m=day -o day.rss
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+      - name: Commit new files
+        run: if [ -n "$(git ls-files --others)" ];
+          then
+            git ls-files --others | xargs git add --all;
+            git commit -m "🟢 add files";
+          fi
+      - name: Commit deleted files
+        run: if [ -n "$(git ls-files --deleted)" ];
+          then
+            git ls-files --deleted | xargs git add --all;
+            git commit -m "🔴 remove files";
+          fi
+      - name: Commit modified files
+        run: if [ -n "$(git ls-files --modified)" ];
+          then
+            git ls-files --modified | xargs git add --all;
+            git commit -m "🟡 update files";
+          fi
+      - name: Push changes
+        run: git push
