@@ -16,7 +16,7 @@ jobs:
         run: curl --version
 
       - name: cURL
-        run: curl https://libcal.caltech.edu/rss.php?cid=5754&m=day -o day.rss
+        run: curl --silent "https://libcal.caltech.edu/rss.php?cid=5754&m=day" > day.rss
 
       - name: Configure Git identity
         run: |
