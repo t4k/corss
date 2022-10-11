@@ -43,6 +43,7 @@ def construct_bootstrap_alert(entry):
     return str(soup)
 
 
+# split library and archives notices into separate lists
 archives_entries = []
 library_entries = []
 for entry in notices.entries:
@@ -57,24 +58,22 @@ for entry in notices.entries:
 
 
 def evaluate_entry(entry):
-    # print(f"🐞 arrow.utcnow(): {arrow.utcnow()}")
-    # print(f"🐞 arrow.now(): {arrow.now()}")
     # create date/time/tz string from feed entry elements
     datetimetz_string = (
         f'{entry["libcal_date"]} {entry["libcal_end"]} America/Los_Angeles'
     )
-    # print(f'🐞 arrow.get(): {arrow.get(datetimetz_string, "YYYY-MM-DD HH:mm:ss ZZZ")}')
+    # GitHub Actions runners are on UTC
     if arrow.get(datetimetz_string, "YYYY-MM-DD HH:mm:ss ZZZ") > arrow.now():
-        # print(f"🐞 {datetimetz_string} > arrow.now(): {arrow.now()}")
+        # proceed when the end time is still in the future
         return construct_bootstrap_alert(entry) + "\n"  # prettify
     else:
         return
 
 
-with open("fragments/notices/archives", "w") as fp:
+with open("fragments/notices/archives.html", "w") as fp:
     for entry in archives_entries:
         fp.write(evaluate_entry(entry))
 
-with open("fragments/notices/library", "w") as fp:
+with open("fragments/notices/library.html", "w") as fp:
     for entry in library_entries:
         fp.write(evaluate_entry(entry))
