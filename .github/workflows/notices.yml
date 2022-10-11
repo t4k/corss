@@ -22,14 +22,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install arrow beautifulsoup4 bleach feedparser
 
+      - name: Create fragments directory
+        run: mkdir -p fragments
+
       - name: 🐞 python --version
         run: python --version
-
-      - name: 🐞 curl --version
-        run: curl --version
-
-      - name: cURL
-        run: curl --silent "https://libcal.caltech.edu/rss.php?cid=5754&m=day" > day.rss
 
       - name: Parse RSS with Python
         run: python .github/workflows/work.py
