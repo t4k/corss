@@ -13,7 +13,7 @@ def create_notice(entry):
     print(soup)
     soup.div.wrap(soup.new_tag("div", attrs={"class": "alert alert-dismissible", "role": "alert"}))
     soup.div["class"].append(f"alert-{level}")
-    soup.div.div.insert_before(soup.new_tag("button", attrs={"aria-label": "Close", "class": "close", "data-dismiss": "alert", "type": "button"}))
+    soup.div.div.insert_before(soup.new_tag("button", attrs={"aria-label": "Close", "class": "close", "data-dismiss": "alert", "type": "button"}), "\n")
     print(soup)
     soup.button.insert_before("\n  ")
     soup.button.append(soup.new_tag("span", attrs={"aria-hidden": "true"}))
