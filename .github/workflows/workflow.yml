@@ -1,10 +1,10 @@
-name: Download RSS
+name: Workflow
 on:
   schedule:
-    - cron: '*/6 * * * *'
+    - cron: '1 1 * * *'
   workflow_dispatch:
 jobs:
-  download-rss:
+  workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,11 +12,24 @@ jobs:
         with:
           fetch-depth: 2  # in order to determine changed files
 
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4 bleach feedparser
+
       - name: 🐞 curl --version
         run: curl --version
 
       - name: cURL
         run: curl --silent "https://libcal.caltech.edu/rss.php?cid=5754&m=day" > day.rss
+
+      - name: Parse RSS
+        run: python .github/workflows/work.py
 
       - name: Configure Git identity
         run: |
