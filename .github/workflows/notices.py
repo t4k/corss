@@ -31,9 +31,6 @@ with open("fragments/notices.html", "w") as fp:
     for entry in notices.entries:
         datetimetz_string = f'{entry["libcal_date"]} {entry["libcal_end"]} America/Los_Angeles'
         print(f'🐞 arrow.get(): {arrow.get(datetimetz_string, "YYYY-MM-DD HH:mm:ss ZZZ")}')
-        if arrow.get(datetimetz_string, "YYYY-MM-DD HH:mm:ss ZZZ") < arrow.now():
-            print(f"🐞 {datetimetz_string} < arrow.now(): {arrow.now()}")
-            # TODO we need to hide this entry
-        else:
+        if arrow.get(datetimetz_string, "YYYY-MM-DD HH:mm:ss ZZZ") > arrow.now():
             print(f"🐞 {datetimetz_string} > arrow.now(): {arrow.now()}")
             fp.write(f"{create_notice(entry)}\n")
