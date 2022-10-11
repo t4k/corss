@@ -46,7 +46,7 @@ def construct_bootstrap_alert(entry):
 archives_entries = []
 library_entries = []
 for entry in notices.entries:
-    locations = entry["libcal_locations"].split(", ")
+    locations = entry["libcal_location"].split(", ")
     for location in locations:
         if "Archives" in location:
             entry["libcal_location"] = location
