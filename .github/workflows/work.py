@@ -1,8 +1,8 @@
+import datetime
+
 import bleach
 import feedparser
 
-from datetime import datetime
-
 from bs4 import BeautifulSoup
 
-print(f"🐞 {datetime.now()}")
+print(f"🐞 {datetime.datetime.now(datetime.timezone.utc)}")
