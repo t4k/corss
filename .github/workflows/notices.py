@@ -15,8 +15,10 @@ def create_notice(entry):
     soup.div["class"].append(f"alert-{level}")
     soup.div.div.insert_before(soup.new_tag("button", attrs={"aria-label": "Close", "class": "close", "data-dismiss": "alert", "type": "button"}))
     print(soup)
+    soup.button.insert_before("\n  ")
     soup.button.append(soup.new_tag("span", attrs={"aria-hidden": "true"}))
     soup.button.span.append("×")
+    soup.button.insert_after("\n  ")
     if soup.a:
         soup.a["class"] = "alert-link"
     soup.div.div.unwrap()
