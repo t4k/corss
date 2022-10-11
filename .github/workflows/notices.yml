@@ -23,7 +23,7 @@ jobs:
           pip install arrow beautifulsoup4 bleach feedparser
 
       - name: Create fragments directory
-        run: mkdir -p fragments
+        run: mkdir -p fragments/notices
 
       - name: 🐞 python --version
         run: python --version
