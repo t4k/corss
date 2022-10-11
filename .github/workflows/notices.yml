@@ -1,10 +1,10 @@
-name: Workflow
+name: Construct Notices
 on:
   schedule:
     - cron: '1 1 * * *'
   workflow_dispatch:
 jobs:
-  workflow:
+  notices:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
         run: python --version
 
       - name: Parse RSS with Python
-        run: python .github/workflows/work.py
+        run: python .github/workflows/notices.py
 
       - name: Configure Git identity
         run: |
