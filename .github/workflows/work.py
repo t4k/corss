@@ -11,3 +11,7 @@ notices = feedparser.parse("https://libcal.caltech.edu/rss.php?cid=5754&m=day")
 for entry in notices.entries:
     datetimetz_string = f'{entry["libcal_date"]} {entry["libcal_end"]} America/Los_Angeles'
     print(f'🐞 arrow.get(): {arrow.get(datetimetz_string, "YYYY-MM-DD HH:mm:ss ZZZ")}')
+    if arrow.get(datetimetz_string, "YYYY-MM-DD HH:mm:ss ZZZ") < arrow.now():
+        print(f"🐞 {datetimetz_string} < arrow.now(): {arrow.now()}")
+    else:
+        print(f"🐞 {datetimetz_string} > arrow.now(): {arrow.now()}")
