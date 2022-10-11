@@ -2,13 +2,21 @@
 <item>
 <title>Get It @ Caltech</title>
 <link>https://libcal.caltech.edu/event/9783608</link>
-<description>&lt;strong&gt;Time:&lt;/strong&gt; All Day Event&lt;br/&gt;  &lt;strong&gt;Location:&lt;/strong&gt;  Website Notice: Library — info&lt;br/&gt;  &#x3C;p&gt;&#x3C;strong&gt;Get It @ Caltech&#x3C;/strong&gt; replaces CaltechConnect! &#x3C;a href=&quot;/blog/Get-It-Caltech-replacing-CaltechConnect&quot;&gt;Read more&#x3C;span class=&quot;sr-only&quot;&gt; about changes to icons in our link resolver&#x3C;/span&gt;&#x26;hellip;&#x3C;/a&gt;&#x3C;/p&gt;</description>
+<description>&lt;strong&gt;Time:&lt;/strong&gt; All Day Event&lt;br/&gt;  &lt;strong&gt;Location:&lt;/strong&gt;  Website Notice: Library — info&lt;br/&gt;  &#x3C;p&gt;&#x3C;strong&gt;Get It @ Caltech&#x3C;/strong&gt; replaces CaltechConnect! &#x3C;a href=&quot;/blog/Get-It-Caltech-replacing-CaltechConnect&quot;&gt;Read more&#x3C;span class=&quot;sr-only&quot;&gt; about changes to icons in our link resolver&#x3C;/span&gt;&#x26;hellip;&#x3C;/a&gt;&#x3C;/p&gt;
+
+&#x3C;p&gt;And what if there is another paragraph or an image.&#x3C;/p&gt;
+
+&#x3C;p&gt;&#x3C;img alt=&quot;&quot; src=&quot;https://libapps.s3.amazonaws.com/accounts/101730/images/Star_Trek_1968_Big_T.jpeg&quot; style=&quot;width: 520px; height: 338px;&quot; /&gt;&#x3C;/p&gt;</description>
 <guid>https://libcal.caltech.edu/event/9783608</guid>
 <libcal:eventid>9783608</libcal:eventid>
 <libcal:date>2022-10-10</libcal:date>
 <libcal:start>00:00:00</libcal:start>
 <libcal:end>23:59:59</libcal:end>
-<libcal:description>&#x3C;p&gt;&#x3C;strong&gt;Get It @ Caltech&#x3C;/strong&gt; replaces CaltechConnect! &#x3C;a href=&quot;/blog/Get-It-Caltech-replacing-CaltechConnect&quot;&gt;Read more&#x3C;span class=&quot;sr-only&quot;&gt; about changes to icons in our link resolver&#x3C;/span&gt;&#x26;hellip;&#x3C;/a&gt;&#x3C;/p&gt;</libcal:description>
+<libcal:description>&#x3C;p&gt;&#x3C;strong&gt;Get It @ Caltech&#x3C;/strong&gt; replaces CaltechConnect! &#x3C;a href=&quot;/blog/Get-It-Caltech-replacing-CaltechConnect&quot;&gt;Read more&#x3C;span class=&quot;sr-only&quot;&gt; about changes to icons in our link resolver&#x3C;/span&gt;&#x26;hellip;&#x3C;/a&gt;&#x3C;/p&gt;
+
+&#x3C;p&gt;And what if there is another paragraph or an image.&#x3C;/p&gt;
+
+&#x3C;p&gt;&#x3C;img alt=&quot;&quot; src=&quot;https://libapps.s3.amazonaws.com/accounts/101730/images/Star_Trek_1968_Big_T.jpeg&quot; style=&quot;width: 520px; height: 338px;&quot; /&gt;&#x3C;/p&gt;</libcal:description>
 <libcal:campus></libcal:campus>
 <libcal:location>Website Notice: Library — info</libcal:location>
 <libcal:presenter></libcal:presenter>
