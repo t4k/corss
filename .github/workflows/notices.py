@@ -21,7 +21,7 @@ def create_notice(entry):
         soup.a["class"] = "alert-link"
     soup.div.div.unwrap()
     print(soup)
-    return soup.prettify()
+    return str(soup)
 
 notices = feedparser.parse("https://libcal.caltech.edu/rss.php?cid=5754&m=day")
 with open("fragments/notices.html", "w") as fp:
